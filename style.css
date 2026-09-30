@@ -1,0 +1,542 @@
+:root {
+    --bg-body: #000;
+    --bg-card: #222222;
+    --bg-input: #333;
+
+    --bg-result: #e4e4e4;
+    --bg-result-dark: #111;
+
+    --accent: #0004f3;
+    --accent-hover: #00b4ff;
+
+    --text: #fff;
+    --text-muted: #cfcfcf;
+    --text-dark: #111;
+
+    --danger: #ff5c5c;
+    --success: #4caf50;
+    --warning: #999999;
+
+    --border: #aaa;
+    --border-soft: #7a7a7a;
+
+    --radius: 8px;
+    --radius-pill: 999px;
+
+    --transition: 200ms ease;
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    font-size: 16px;
+}
+
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1rem;
+
+    background-color: var(--bg-body);
+    color: var(--text);
+
+    font-family:
+        'Segoe UI',
+        Roboto,
+        system-ui,
+        -apple-system,
+        sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    width: 100%;
+    max-width: 360px;
+
+    padding: 1.25rem 1rem;
+
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+
+    background-color: var(--bg-card);
+
+    box-shadow:
+        0 20px 40px -20px rgba(0, 0, 0, .6);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 1.25rem;
+}
+
+
+.card-header h1 {
+    font-size: 1rem;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+.reset-btn {
+    border: 1px solid transparent;
+
+    padding: .45rem .9rem;
+
+    border-radius: var(--radius-pill);
+
+    background-color: var(--accent);
+    color: #fff;
+
+    font-size: .75rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: .5px;
+
+    cursor: pointer;
+
+    transition:
+        background-color var(--transition),
+        color var(--transition),
+        border-color var(--transition);
+    margin-bottom: 1rem;
+}
+
+
+.reset-btn:hover,
+.reset-btn:focus-visible {
+    background-color: #fff;
+    color: var(--accent);
+
+    border-color: var(--accent);
+
+    outline: none;
+}
+
+
+/* =========================
+   TURNOS
+========================= */
+
+.turno-section {
+    width: 100%;
+}
+
+
+.title-turno {
+    margin-bottom: .5rem;
+
+    text-align: center;
+
+    font-size: .85rem;
+    font-weight: 700;
+
+    color: var(--text-muted);
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.turno {
+    display: flex;
+
+    width: 100%;
+
+    gap: .75rem;
+}
+
+
+.input-turno {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: .25rem;
+}
+
+
+.input-turno label {
+    font-size: .75rem;
+
+    color: var(--text-muted);
+
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+input[type="text"] {
+    width: 100%;
+    max-width: 110px;
+
+    padding: .5rem;
+
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+
+    background-color: var(--bg-input);
+    color: var(--text);
+
+    text-align: center;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    font-variant-numeric: tabular-nums;
+
+    letter-spacing: 1px;
+
+    outline: none;
+
+    transition:
+        border-color var(--transition),
+        background-color var(--transition);
+}
+
+
+input[type="text"]:focus {
+    border-color: var(--accent);
+
+    background-color: #292929;
+}
+
+
+input[type="text"]::placeholder {
+    color: #888;
+}
+
+
+/* =========================
+   DIVISOR
+========================= */
+
+.bar-dotted {
+    width: 90%;
+
+    height: 1px;
+
+    margin: 1rem auto;
+
+    border-top: 1px dashed var(--border-soft);
+}
+
+
+/* =========================
+   RESULTADOS
+========================= */
+
+.resultados {
+    width: 100%;
+
+    text-align: center;
+}
+
+
+.resultados h2,
+.previsao h2 {
+    margin-bottom: .6rem;
+
+    font-size: .85rem;
+
+    color: var(--text-muted);
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+
+}
+
+
+.horas-calculadas {
+    display: flex;
+
+    width: 100%;
+
+    gap: .5rem;
+}
+
+
+.resultado-item {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: .25rem;
+
+    font-size: .75rem;
+
+    color: var(--text-muted);
+
+    text-transform: uppercase;
+}
+
+
+#manha,
+#tarde,
+#tempoAlmoco,
+#totalTrabalhado {
+    display: inline-block;
+
+    padding: .3rem .8rem;
+
+    border-radius: var(--radius);
+
+    background-color: var(--bg-result);
+    color: var(--text-dark);
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    font-variant-numeric: tabular-nums;
+    text-transform: none;
+
+}
+
+
+/* =========================
+   TOTAL
+========================= */
+
+.resultado-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: .75rem;
+    padding: .65rem .75rem;
+
+    border-radius: var(--radius);
+
+    background-color: var(--bg-result-dark);
+
+    color: var(--text);
+
+    font-size: .75rem;
+
+    text-transform: uppercase;
+}
+
+
+.resultado-total #totalTrabalhado {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+
+/* =========================
+   ALMOÇO
+========================= */
+
+.tempo-almoco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: .25rem;
+
+    margin-top: .75rem;
+
+    font-size: .75rem;
+
+    color: var(--text-muted);
+
+    text-transform: uppercase;
+}
+
+
+#tempoAlmoco {
+    background-color: var(--warning);
+    color: #6b4a00;
+}
+
+
+/* =========================
+   PREVISÃO
+========================= */
+
+.previsao {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+.selectHorario {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin-bottom: .75rem;
+
+    gap: .5rem;
+
+    font-size: .8rem;
+
+    color: var(--text-muted);
+}
+
+
+select {
+    padding: .4rem .6rem;
+
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+
+    background-color: var(--bg-input);
+    color: var(--text);
+
+    font-size: .9rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    outline: none;
+
+    transition: border-color var(--transition);
+}
+
+
+select:focus {
+    border-color: var(--accent);
+}
+
+
+option {
+    background-color: #000;
+    color: #fff;
+}
+
+
+/* =========================
+   CÁLCULO DA PREVISÃO
+========================= */
+
+.calculo-previsao {
+    display: flex;
+
+    width: 100%;
+
+    gap: .5rem;
+}
+
+
+.calculo-previsao>div {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: .25rem;
+
+    font-size: .75rem;
+
+    color: var(--text-muted);
+
+    text-transform: uppercase;
+}
+
+
+#previsaoEntrada,
+#saidaPrevista {
+    display: inline-block;
+
+    padding: .3rem .8rem;
+
+    border-radius: var(--radius);
+
+    background-color: var(--bg-result-dark);
+    color: #fff;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+#saidaPrevista {
+    background-color: var(--accent);
+}
+
+
+/* =========================
+   ERRO
+========================= */
+
+.input-erro {
+    border-color: var(--danger) !important;
+
+    background-color: #3a2020 !important;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 380px) {
+
+    body {
+        padding: .5rem;
+    }
+
+    .card {
+        padding: 1rem .75rem;
+    }
+
+    .selectHorario {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    select {
+        width: 100%;
+    }
+
+}

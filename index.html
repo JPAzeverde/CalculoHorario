@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#2b2b2b">
+
+    <title>Controle de Horas Trabalhadas</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="card" aria-label="Controle de horas trabalhadas">
+
+        <header class="card-header">
+            <button class="reset-btn" id="resetBtn" type="button" aria-label="Resetar todos os horários">
+                Resetar
+            </button>
+            <h1>Controle de horas</h1>
+
+
+        </header>
+
+
+        <!-- ==================== MANHÃ ==================== -->
+
+        <section class="turno-section">
+
+            <h2 class="title-turno">Manhã</h2>
+
+            <div class="turno">
+
+                <div class="input-turno">
+                    <label for="entrada">Entrada</label>
+
+                    <input type="text" id="entrada" placeholder="--:--" maxlength="5" inputmode="numeric"
+                        autocomplete="off" aria-describedby="erroEntrada">
+                </div>
+
+
+                <div class="input-turno">
+                    <label for="saidaAlmoco">Saída</label>
+
+                    <input type="text" id="saidaAlmoco" placeholder="--:--" maxlength="5" inputmode="numeric"
+                        autocomplete="off" aria-describedby="erroSaidaAlmoco">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <div class="bar-dotted" role="separator"></div>
+
+
+        <!-- ==================== TARDE ==================== -->
+
+        <section class="turno-section">
+
+            <h2 class="title-turno">Tarde</h2>
+
+            <div class="turno">
+
+                <div class="input-turno">
+                    <label for="entradaAlmoco">Entrada</label>
+
+                    <input type="text" id="entradaAlmoco" placeholder="--:--" maxlength="5" inputmode="numeric"
+                        autocomplete="off" aria-describedby="erroEntradaAlmoco">
+                </div>
+
+
+                <div class="input-turno">
+                    <label for="saida">Saída</label>
+
+                    <input type="text" id="saida" placeholder="--:--" maxlength="5" inputmode="numeric"
+                        autocomplete="off" aria-describedby="erroSaida">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <div class="bar-dotted" role="separator"></div>
+
+
+        <!-- ==================== RESULTADOS ==================== -->
+
+        <section class="resultados">
+
+            <h2>Horas trabalhadas</h2>
+
+            <div class="horas-calculadas">
+
+                <div class="resultado-item">
+                    <span>Manhã</span>
+                    <output id="manha" aria-live="polite">
+                        --:--
+                    </output>
+                </div>
+
+                <div class="resultado-item">
+                    <span>Tarde</span>
+                    <output id="tarde" aria-live="polite">
+                        --:--
+                    </output>
+                </div>
+
+            </div>
+
+
+            <div class="resultado-total">
+
+                <span>Total trabalhado</span>
+
+                <output id="totalTrabalhado" aria-live="polite">
+                    --:--
+                </output>
+
+            </div>
+
+
+            <div class="tempo-almoco">
+
+                <span>Tempo de almoço</span>
+
+                <output id="tempoAlmoco" aria-live="polite">
+                    --:--
+                </output>
+
+            </div>
+
+        </section>
+
+
+        <div class="bar-dotted" role="separator"></div>
+
+
+        <!-- ==================== PREVISÃO ==================== -->
+
+        <section class="previsao">
+
+            <h2>Previsão</h2>
+
+            <div class="selectHorario">
+
+                <label for="horasPretendidas">
+                    Pretende trabalhar
+                </label>
+
+                <select id="horasPretendidas">
+
+                    <option value="7">7h</option>
+                    <option value="7.5">7h30min</option>
+                    <option value="8">8h</option>
+                    <option value="8.5">8h30min</option>
+                    <option value="9" selected>9h</option>
+                    <option value="9.5">9h30min</option>
+                    <option value="10">10h</option>
+                    <option value="10.5">10h30min</option>
+                    <option value="11">11h</option>
+                    <option value="11.5">11h30min</option>
+                    <option value="12">12h</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="calculo-previsao">
+
+                <div>
+                    <span>Entrada</span>
+
+                    <output id="previsaoEntrada" aria-live="polite">
+                        --:--
+                    </output>
+                </div>
+
+
+                <div>
+                    <span>Saída prevista</span>
+
+                    <output id="saidaPrevista" aria-live="polite">
+                        --:--
+                    </output>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="app.js" defer></script>
+
+</body>
+
+</html>
